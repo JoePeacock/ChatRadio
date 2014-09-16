@@ -13,6 +13,8 @@ class Radio {
 
     private:
         int broadcast_frequency;
+	int fd;
+	int set_register(unsigned char reg, unsigned char value);
 
 };
 
