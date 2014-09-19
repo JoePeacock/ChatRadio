@@ -1,23 +1,19 @@
 #include <iostream>
 #include <string>
 
-#ifndef RADIO_H_
-#define RADIO_H_
-
 class Radio {
 
     public:
         Radio(int frequency);
         bool set_frequency(int frequency);
         bool send_broadcast(std::string message);
-        int listen(void);
-        int close(void);
+        int listen();
+        int close_radio();
 
     private:
         int broadcast_frequency;
         int fd;
         int set_register(unsigned char reg, unsigned char value);
-        int set_init_registers(void);
+        unsigned char read_register(unsigned char reg);
+        int set_init_registers();
 };
-
-#endif

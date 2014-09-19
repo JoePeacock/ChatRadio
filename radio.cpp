@@ -1,4 +1,5 @@
 #include "radio.h"
+
 #include <iostream>
 #include <linux/spi/spidev.h>
 #include <unistd.h>
@@ -6,12 +7,11 @@
 #include <stdio.h>
 #include <fcntl.h>
 
-int fd;
 static const char *device = "/dev/spidev0.1";
 
 Radio::Radio(int frequency)
 {
-    this->set_frequency(frequency);
+    set_frequency(frequency);
 
     fd = open(device, O_RDWR);
     if (fd < 0) 
@@ -20,16 +20,31 @@ Radio::Radio(int frequency)
     int ret = set_init_registers();
     if (ret < 0)
         perror("Radio initialization failed!");
+    
 }
 
 int Radio::set_init_registers()
 {
-    // Send some shit over SPI
-
-
+    unsigned char = read_register(0x02)
+    set_register(0x0D, 0xFF);
 }
 
-int Radio::close()
+unsigned char Radio::read_register(unsigned char reg)
+{
+    unsigned char data[2];
+    data[0] = reg;
+    data[1] = value;
+
+    if(write(fd, data, 1) != 1)
+        perror("Failed to write register, while reading.");
+
+    ret = read(fd, &data[1], 1);
+    if (ret > 0)
+        return data[1];
+}
+
+
+int Radio::close_radio()
 {
     // Close that file descriptor.
     close(fd);

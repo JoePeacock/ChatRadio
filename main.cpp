@@ -23,7 +23,7 @@ int main() {
     Radio radio = Radio(frequency);
     
     // And make sure we close it!
-    radio.close()
+    radio.close_radio();
     return 0;
   
     // Start the cli
