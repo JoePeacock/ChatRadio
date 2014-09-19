@@ -2,14 +2,39 @@
 #include <iostream>
 #include <linux/spi/spidev.h>
 #include <unistd.h>
-#include <fcntl.h>
 #include <string>
+#include <stdio.h>
+#include <fcntl.h>
+
+int fd;
+static const char *device = "/dev/spidev0.1";
 
 Radio::Radio(int frequency)
 {
     this->set_frequency(frequency);
-    fd = open("/dev/spi-0.1",O_RDWR);
+
+    fd = open(device, O_RDWR);
+    if (fd < 0) 
+        perror("Can't open device!");
+
+    int ret = set_init_registers();
+    if (ret < 0)
+        perror("Radio initialization failed!");
 }
+
+int Radio::set_init_registers()
+{
+    // Send some shit over SPI
+
+
+}
+
+int Radio::close()
+{
+    // Close that file descriptor.
+    close(fd);
+}
+
 
 /*
  *Frequency to set to: 9Mhz

@@ -21,6 +21,10 @@ int main() {
     
     // init our Radio object
     Radio radio = Radio(frequency);
+    
+    // And make sure we close it!
+    radio.close()
+    return 0;
   
     // Start the cli
     while(true)
