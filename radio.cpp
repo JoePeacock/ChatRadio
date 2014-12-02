@@ -14,12 +14,12 @@ Radio::Radio(int frequency)
 /*
  *Frequency to set to: 9Mhz
  */
-bool Radio::set_frequency(int frequency) 
+bool Radio::set_frequency(int frequency_value) 
 {
-    this->broadcast_frequency = frequency;
+    this->broadcast_frequency = frequency_value;
 
-    unsigned char frequency = 0x01; //filler value
-    set_reg(0x73,frequency); //not correct value & should used #define for register address
+    unsigned char frequency = 0x01; // filler value
+    this->set_register(0x73, frequency); // not correct value & should used #define for register address
 }
 
 bool Radio::send_broadcast(char *message[]) 
