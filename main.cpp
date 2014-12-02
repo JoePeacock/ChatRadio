@@ -19,12 +19,12 @@ int main() {
     cout << "Built by: Joe Peacock & Mike Ferris" << endl << endl;
     
     // init our Radio object
-    radio = Radio(active_frequency);
+    radio = Radio(frequency);
   
     // Start the cli
     while(true)
     {
-      cout << active_frequency << "Mhz #> ";
+      cout << frequency << "Mhz #> ";
       getline(cin, input);
 
       if (input.compare(help_command) == 0) 
