@@ -1,3 +1,4 @@
+#include <iostream>
 #include <string>
 
 #ifndef RADIO_H_
@@ -8,7 +9,7 @@ class Radio {
     public:
         Radio(int frequency);
         bool set_frequency(int frequency);
-        bool send_broadcast(string message);
+        bool send_broadcast(std::string message);
         int listen();
 
     private:
