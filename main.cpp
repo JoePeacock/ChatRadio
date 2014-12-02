@@ -40,7 +40,7 @@ int main() {
       {
         cout << "Set Frequency #> ";
         getline(cin, input); 
-        frequency = stoi(input, nullptr, 0);
+        frequency = stoi(input, NULL, 0);
         cout << "Succesfully set radio frequency to: " << input << endl;
       }
 
