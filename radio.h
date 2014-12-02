@@ -1,3 +1,5 @@
+#include <string>
+
 #ifndef RADIO_H_
 #define RADIO_H_
 
@@ -6,7 +8,7 @@ class Radio {
     public:
         Radio(int frequency);
         bool set_frequency(int frequency);
-        bool send_broadcast(char *message[]);
+        bool send_broadcast(string message);
         int listen();
 
     private:
