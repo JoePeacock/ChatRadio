@@ -1,8 +1,6 @@
 #ifndef RADIO_H_
 #define RADIO_H_
 
-using namespace std;
-
 class Radio {
 
     public:
@@ -13,9 +11,8 @@ class Radio {
 
     private:
         int broadcast_frequency;
-	int fd;
-	int set_register(unsigned char reg, unsigned char value);
-
+        int fd;
+        int set_register(unsigned char reg, unsigned char value);
 };
 
 #endif

@@ -1,5 +1,5 @@
 #include "radio.h"
-#include <linux/spi-dev.h>
+#include <linux/spi/spidev.h>
 #include <unistd.h>
 #include <fcntl.h>
 

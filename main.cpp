@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <radio.h>
+#include "radio.h"
 
 using namespace std;
 
@@ -19,7 +19,7 @@ int main() {
     cout << "Built by: Joe Peacock & Mike Ferris" << endl << endl;
     
     // init our Radio object
-    radio = Radio(frequency);
+    Radio radio = Radio(frequency);
   
     // Start the cli
     while(true)
