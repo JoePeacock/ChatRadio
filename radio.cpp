@@ -3,8 +3,6 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-using namespace std;
-
 Radio::Radio(int frequency)
 {
     this->set_frequency(frequency);
@@ -24,12 +22,12 @@ bool Radio::set_frequency(int frequency_value)
 
 bool Radio::send_broadcast(char *message[]) 
 {
-    cout << message << endl;
+    std::cout << message << std::endl;
 }
 
 int Radio::listen() 
 {
-    cout << "Listening" << endl;
+    std::cout << "Listening" << std::endl;
 }
 
 
@@ -39,7 +37,7 @@ int Radio::set_register(unsigned char reg, unsigned char value)
     data[0] = reg;
     data[1] = value;
 
-    if( write(fd,data,2) != 2)
+    if(write(fd, data, 2) != 2)
     {
         return -1;
     }
