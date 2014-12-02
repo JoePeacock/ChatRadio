@@ -3,6 +3,7 @@
 #include <linux/spi/spidev.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <string>
 
 Radio::Radio(int frequency)
 {
@@ -21,7 +22,7 @@ bool Radio::set_frequency(int frequency_value)
     this->set_register(0x73, frequency); // not correct value & should used #define for register address
 }
 
-bool Radio::send_broadcast(char *message[]) 
+bool Radio::send_broadcast(string message) 
 {
     std::cout << message << std::endl;
 }

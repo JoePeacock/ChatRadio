@@ -50,6 +50,9 @@ int main() {
         cout << "Exiting.." << endl;
         return 0;
       }
+      
+      // Ok so lets write our message.
+      radio.send_broadcast(input);
 
     }
     return 0;
